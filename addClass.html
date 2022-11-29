@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <style>
+        .logo.vite:hover {
+            filter: drop-shadow(0 0 2em #747bff);
+        }
+
+        .logo.typescript:hover {
+            filter: drop-shadow(0 0 2em #2d79c7);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Class Name Here</h1>
+
+        <div class="container">
+            <h3>How many blitzes to run?</h3>
+            <input id="numOfBlitz-input" placeholder="Enter a number..." />
+        </div>
+
+        <div class="container">
+            <h3>How many rounds of each blitz?</h3>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="5" value="1" class="slider" id="numOfRounds-input">
+            </div>
+        </div>
+
+        <button id="saveClass-button" type="button">Save</button>
+    </div>
+</body>
+
+</html>
