@@ -14,7 +14,7 @@ rust-version = "1.57"
 tauri-build = {version = "1.2", features = [] }
 
 [dependencies]
-mongodb = "2.3.1"
+mongodb = { version = "2.1", default-features = false, features = ["sync"] }
 bson = { version = "2", features = ["chrono-0_4"] } # Needed for using chrono datetime in doc
 tokio = "1"
 chrono = "0.4" # Used for setting DateTimes

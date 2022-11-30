@@ -1,4 +1,5 @@
 import { invoke } from "@tauri-apps/api/tauri";
+import { emit, listen } from "@tauri-apps/api/event";
 
 //index.html
 let classNameInputEl: HTMLInputElement | null;
@@ -9,9 +10,12 @@ async function addClass() {
     if (classNameInputEl.value == "") {
       console.log("Plz enter a class")
     } else {
-      testMsgEl.textContent = await invoke("greet", {
-        name: classNameInputEl.value,
-      });
+      // testMsgEl.textContent = await invoke("greet", {
+      //   name: classNameInputEl.value,
+      // });
+      let className = classNameInputEl.value.replace(/["']/g, "")
+      await emit('create-class',
+        className);
       change_page_to("addClass.html")
     }
 
@@ -27,6 +31,7 @@ async function saveClass() {
     if (numOfBlitzInputEl.value == "") {
       console.log("Plz enter num of blitzes")
     } else {
+      await emit('create-class',)
       change_page_to("index.html")
     }
   }
